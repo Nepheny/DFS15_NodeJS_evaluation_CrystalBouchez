@@ -1,0 +1,9 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h2>Contacts : {{ nbResults }}</h2>
+  <h2>Last contacts registered</h2>
+  {% for contact in contacts %}
+    {% include "contact.twig" with {contact} %}
+  {% endfor %}
+{% endblock %}

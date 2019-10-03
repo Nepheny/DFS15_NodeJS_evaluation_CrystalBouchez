@@ -1,0 +1,19 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<div class="row">
+    <ul class="mr-auto"></ul>
+    <form class="form col-md-4" id="form">
+        <input class="form-control mr-sm-2" type="text" placeholder="Url de l'avatar" aria-label="Url de l'avatar" name="avatar">
+        <input class="form-control mr-sm-2" type="text" placeholder="Nom" aria-label="Nom" name="lastname" required>
+        <input class="form-control mr-sm-2" type="text" placeholder="Prénom" aria-label="Prénom" name="firstname">
+        <input class="form-control mr-sm-2" type="text" placeholder="Description" aria-label="Description" name="description">
+        <input class="form-control mr-sm-2" type="tel" placeholder="Numéro personnel" aria-label="Numéro personnel" name="phones[]">
+        <input class="form-control mr-sm-2" type="tel" placeholder="Numéro professionnel" aria-label="Numéro professionnel" name="phones[]">
+        <input class="form-control mr-sm-2" type="email" placeholder="Mail personnel" aria-label="Mail personnel" name="emails[]">
+        <input class="form-control mr-sm-2" type="email" placeholder="Mail professionnel" aria-label="Mail professionnel" name="emails[]">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer</button>
+    </form>
+    <ul class="mr-auto"></ul>
+</div>
+{% endblock %}

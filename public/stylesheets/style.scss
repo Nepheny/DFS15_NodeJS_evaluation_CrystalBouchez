@@ -1,0 +1,61 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: #00B7FF;
+  }
+
+  .container {
+    margin-top: 50px;
+  }
+
+  .form-control {
+    margin: 20px 0;
+  }
+
+  .card-content {
+    border-left:1px solid rgba(0,0,0,.125)
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent center no-repeat;
+    background-size: cover;
+    display: inline-block;
+  }
+  .card-header > .row {
+    align-items: center;
+  }
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  .trending {
+    .rateColumn > *,
+    .card-header,
+    figcaption,
+    .card-footer {
+      display: none;
+    }
+    .card {
+      padding-right: 15px;
+      padding-left: 15px;
+      height: 100%;
+      .card-content {
+        border-left: none;
+      }
+      .col-11 {
+        flex: 0 0 100%;
+
+        max-width: 100%;
+      }
+    }
+  }
+}

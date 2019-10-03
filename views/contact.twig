@@ -1,0 +1,45 @@
+<aside class=" col-12 card mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 card-header">
+                    <div class="row">
+                        <div class="col-1 header-avatar"><span class=" avatar" style="background-image: url({{ contact.avatar }})"></span></div>
+                        <div class="col-4 header-author">{{ contact.dateTime | date('d/m/Y H:i') }}</div>
+                        <div class="col-6 text-right header-title">{{ contact.firstname }} {{ contact.lastname }}</div>
+                        <div class="col-6 text-right">
+                            <form class="form-inline" id="delete">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 card-content" >
+                    <div class="row">
+                        <div class="col-12 mb-2 mt-3">
+                            {{ contact.description }}
+                        </div>
+                    </div>
+                    {% if contact.phones.length %}
+                        <div class="row">
+                            {% for phone in contact.phones %}
+                                <div class="col-12 mb-2 mt-3">
+                                    {{ phone }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                     {% if contact.emails.length %}
+                        <div class="row">
+                            {% for email in contact.emails %}
+                                <div class="col-12 mb-2 mt-3">
+                                    {{ email }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
