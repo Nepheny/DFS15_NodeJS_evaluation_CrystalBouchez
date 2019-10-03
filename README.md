@@ -2,19 +2,19 @@ requêtes
 page 1
 - 3 derniers contacts enregistrés
 - nb total de contacts enregistrés
-    - création contact => lien vers formulaire
+- création contact => lien vers formulaire
 
 page 2
-    - création contact
+- création contact
 
 page 3
-    - liste de tous les contacts par ordre alphabétique
+- liste de tous les contacts par ordre alphabétique
 
 page 4
-    - read un contact (avatar, nom / prénom, description, tels, emails)
+- read un contact (avatar, nom / prénom, description, tels, emails)
 
 AJAX
-- modifier infos contact
+    - modifier infos contact
 - supprimer le contact
 
 

@@ -23,7 +23,7 @@ router.get('/:id', (req, res, next) => {
     .findOne({_id: ObjectId(req.params.id)}, (err, contact) => {
       if (err) throw err;
       if (!contact || !contact._id) return next(createError(404));
-      res.send({ok: true, contact});
+      res.render('read.twig', {contact});
     });
 });
 
@@ -43,16 +43,16 @@ router.get('/', (req, res, next) => {
       if (err) throw err;
       if (!contacts || contacts.length === 0) return next(createError(404));
 
-      let results = [];
+      let result = [];
       for (let i in contacts) {
         res.render('contact.twig', {contact: contacts[i]}, (err, html) => {
-          results.push(html);
+          result.push(html);
         });
       }
 
-      console.log(results)
+      console.log(result)
       
-      res.render({ok: true, nbResults, results});
+      res.send({ok: true, nbResults, result});
     });
   });
 });

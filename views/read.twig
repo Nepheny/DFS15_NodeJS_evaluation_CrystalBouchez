@@ -1,3 +1,6 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
 <aside class=" col-12 card mb-3">
     <div class="row">
         <div class="col-12">
@@ -5,8 +8,19 @@
                 <div class="col-12 card-header">
                     <div class="row">
                         <div class="col-1 header-avatar"><span class=" avatar" style="background-image: url({{ contact.avatar }})"></span></div>
-                        <div class="col-11 header-author"><a href="/contacts/{{ contact._id }}">{{ contact.firstname }} {{ contact.lastname }}</a></div>
-                        </form>
+                        <div class="col-2 header-author">{{ contact.firstname }} {{ contact.lastname }}</div>
+                        <div class="col-5 text-right header-title">{{ contact.dateTime | date('d/m/Y H:i') }}</div>
+                        <div class="col-2 text-right">
+                            <form class="form-inline" id="delete">
+                            <input type="hidden" value="{{ contact._id }}" name="id" />
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </div>
+                        <div class="col-2 text-right">
+                            <form class="form-inline" id="update">
+                                <button class="btn btn-success">Modifier</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 card-content" >
@@ -38,3 +52,4 @@
         </div>
     </div>
 </aside>
+{% endblock %}
