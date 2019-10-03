@@ -62,7 +62,9 @@ const update = () => {
 
         values = {...values, phones, emails};
 
-        fetch('/contacts', {
+        console.log(values)
+
+        fetch(`/contacts/${values.id}`, {
             method: "PUT",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(values)

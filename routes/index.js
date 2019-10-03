@@ -6,6 +6,7 @@ const createError = require('http-errors');
 
 // MongoDB
 const mongo = require('../bin/mongo');
+const ObjectId = require('mongodb').ObjectId;
 
 /**
  * GET home page
@@ -28,11 +29,27 @@ router.get('/', (req, res, next) => {
   });
 });
 
+
+/** 
+ * GET from page for update
+*/
+router.get('/form/update/:id', (req, res, next) => {
+  mongo.getInstance()
+    .collection('contacts')
+    .findOne({_id: ObjectId(req.params.id)}, (err, contact) => {
+      if (err) throw err;
+      if (!contact || !contact._id) return next(createError(404));
+      res.render('form', {contact});
+    });
+});
+
 /**
- * GET form page
+ * GET form page for create
  */
-router.get('/form', (req, res, next) => {
+router.get('/form/create', (req, res, next) => {
   res.render('form');
 });
+
+
 
 module.exports = router;

@@ -49,8 +49,6 @@ router.get('/', (req, res, next) => {
           result.push(html);
         });
       }
-
-      console.log(result)
       
       res.send({ok: true, nbResults, result});
     });

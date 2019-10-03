@@ -1,24 +1,4 @@
-requêtes
-page 1
-- 3 derniers contacts enregistrés
-- nb total de contacts enregistrés
-- création contact => lien vers formulaire
-
-page 2
-- création contact
-
-page 3
-- liste de tous les contacts par ordre alphabétique
-
-page 4
-- read un contact (avatar, nom / prénom, description, tels, emails)
-
-AJAX
-    - modifier infos contact
-- supprimer le contact
-
-
-# DFS15 NodeJS cours
+# DFS15 NodeJS Evaluation Annuaire
 
 ## Projet
 Ce projet est un annuaire dans le cadre d'une évaluation NodeJS / expressJS.
@@ -48,14 +28,19 @@ npm run dev
 ```
 
 ## Routes
-
+### API rest
 | route     | action | url                     | options            | return                          |
 |-----------|:------:|-------------------------|:------------------:| -------------------------------:|
-| /         | get    | /                       |                    | render html posts list          |
+| /         | get    | /                       |                    | render html home page           |
 | /contacts | get    | contacts?limit=0&sort=1 | limit / sort       | read 3 last contacts by default |
 |           | get    | contacts/:id            | contactId          | read one contact                |
 |           | post   | contacts/               |                    | create contact                  |
 |           | put    | contacts/:id            | contactId          | update contact                  |
 |           | delete | contacts/:id            | contactId          | archive contact                 |
 
+### AJAX
+- voir tous les contacts
+- supprimer un contact
+- mettre à jour un contact
+- ajouter un contact
 
